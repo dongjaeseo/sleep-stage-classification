@@ -67,6 +67,7 @@ Experiments were run with:
 - **1 channel**
 - **3 channels**
 - **5 channels**
+<img width="689" height="271" alt="image" src="https://github.com/user-attachments/assets/7e490023-a332-4902-a0ad-f85acd4212a9" />
 
 **Best performance:**  
 3 channels (C3-M2, E1-M2, Chin1–Chin2)
@@ -77,6 +78,7 @@ Experiments were run with:
 Two classifiers were tested:
 - **Linear classifier**
 - **SVM**
+<img width="690" height="300" alt="image" src="https://github.com/user-attachments/assets/d8b7b1be-1ceb-42b0-b333-4763bccf5417" />
 
 **Result:**  
 The linear classifier outperformed SVM.
@@ -88,6 +90,7 @@ The linear classifier outperformed SVM.
 Two modes were tested:
 - **Frozen encoder (linear probe)**
 - **Fine-tuned encoder**
+<img width="689" height="198" alt="image" src="https://github.com/user-attachments/assets/ceec2855-d5bc-42f5-a8f3-51ea5a3d4d9f" />
 
 **Best MOMENT result:**  
 - **Macro-F1 = 0.5999**  
@@ -96,6 +99,7 @@ Two modes were tested:
 ---
 
 ### 4.4 Comparison with SleepFM
+<img width="1021" height="320" alt="image" src="https://github.com/user-attachments/assets/ed69382a-7a8f-486d-b5a9-22506d10cae6" />
 - SleepFM achieved a higher macro-F1  
 - MOMENT still showed meaningful performance despite being a general-purpose model
 
