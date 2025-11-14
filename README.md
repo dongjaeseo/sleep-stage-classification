@@ -25,7 +25,7 @@ This project examines:
 ---
 
 ## 2. MOMENT Model Summary
-
+<img width="1019" height="763" alt="image" src="https://github.com/user-attachments/assets/38fbd86b-03c2-4fbc-8107-fe07bad52327" />
 ### Pretraining Strategy
 - **Masking:** Random segments of the input sequence are masked  
 - **Patching:** Signals are split into fixed-length patches  
@@ -51,7 +51,9 @@ This project examines:
 - **Downsampling (stride 2):** 7680 → 3840  
 - **Crop:** Remove 1 second from start and end  
 - **Remaining:** 28 seconds = 3584 samples  
-- **Split:** 3584 / 7 = **7 chunks (each 512 samples)**  
+- **Split:** 3584 / 7 = **7 chunks (each 512 samples)**
+- <img width="983" height="217" alt="image" src="https://github.com/user-attachments/assets/abd15651-191a-480b-bb48-eecdceecbe22" />
+
 
 Each 512-sample chunk is passed through MOMENT.  
 During inference, the 7 logits are averaged to classify the full epoch.
