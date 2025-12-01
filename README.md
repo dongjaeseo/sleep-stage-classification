@@ -12,13 +12,13 @@ This project evaluates **MOMENT** [(Goswami et al., 2024)](https://arxiv.org/abs
 
 This study examines:
 
-- **Channel sensitivity:** performance differences with 1 / 3 / 5 EEG channels  
+- **Channel sensitivity:** performance differences with 1 / 3 / 5 biosignal channels  
 - **Classifier choices:** Linear vs. SVM on frozen embeddings  
 - **Tuning strategy:** frozen encoder vs. full fine-tuning  
 - **Sequence modeling:** adding a bidirectional **Mamba** encoder [(Gu & Dao, 2024)](https://arxiv.org/abs/2312.00752) to capture long-range temporal structure  
-- **Key finding:** Mamba-based sequence learning improves stability on N1/N2 transitions and consistently boosts macro-F1, even with minimal fine-tuning
+- **Key finding:** Mamba-based sequence learning consistently boosts macro-F1, even with minimal fine-tuning
 
-This repository includes preprocessing, embedding extraction, sequence modeling, and training scripts for full reproducibility.
+This repository includes preprocessing, embedding extraction, sequence modeling, and training scripts
 
 ---
 
