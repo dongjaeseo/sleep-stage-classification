@@ -7,20 +7,18 @@ This work is ongoing as part of my research internship at Seoul National Univers
 
 ## 1. Overview
 
-**MOMENT** is a large-scale pretrained time-series foundation model capable of handling:
-- Forecasting  
-- Classification  
-- Imputation  
-- Anomaly detection  
+**How well can a general-purpose time-series foundation model understand sleep?**  
+This project evaluates **MOMENT** [(Goswami et al., 2024)](https://arxiv.org/abs/2402.03885), a large-scale pretrained foundation model for physiological time-series data, on the classical sleep-stage classification task. The goal is to understand what factors most influence downstream performance.
 
-It is pretrained on large-scale time-series datasets that include biosignals such as EEG and ECG.
+This study examines:
 
-This project examines:
-- How a general-purpose foundation model performs on sleep staging  
-- Impact of channel count (1 / 3 / 5 channels)  
-- Classifier comparison (Linear vs SVM)  
-- Frozen vs fine-tuned encoder  
-- Sequence-level modeling using **Mamba**  
+- **Channel sensitivity:** performance differences with 1 / 3 / 5 EEG channels  
+- **Classifier choices:** Linear vs. SVM on frozen embeddings  
+- **Tuning strategy:** frozen encoder vs. full fine-tuning  
+- **Sequence modeling:** adding a bidirectional **Mamba** encoder [(Gu & Dao, 2024)](https://arxiv.org/abs/2312.00752) to capture long-range temporal structure  
+- **Key finding:** Mamba-based sequence learning improves stability on N1/N2 transitions and consistently boosts macro-F1, even with minimal fine-tuning
+
+This repository includes preprocessing, embedding extraction, sequence modeling, and training scripts for full reproducibility.
 
 ---
 
