@@ -5,7 +5,7 @@
 ## 1. Overview
 
 **How well can a general-purpose time-series foundation model understand sleep?**  
-This project evaluates **MOMENT** [(Goswami et al., 2024)](https://arxiv.org/abs/2402.03885), a large-scale pretrained foundation model for physiological time-series data, on the classical sleep-stage classification task. The goal is to understand what factors most influence downstream performance.
+This project evaluates **MOMENT** [(Goswami et al., 2024)](https://arxiv.org/abs/2402.03885), a large-scale pretrained foundation model for physiological time-series data, on the classical sleep-stage classification task and compares its performance with **SleepFM** [(Thapa et al., 2024)](https://arxiv.org/abs/2405.17766), a sleep-specialized foundation model. The goal is to understand what factors most influence downstream performance.
 
 This study examines:
 
