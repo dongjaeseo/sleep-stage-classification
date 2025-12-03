@@ -11,13 +11,13 @@ sleep-stage-classification/
 │   ├── 3_single_SVM.py             # 1-channel → SVM baseline
 │   ├── 4_multi_linear.py           # 3-channel → linear classifier
 │   ├── 5_multi_SVM.py              # 3-channel → SVM classifier
-│   ├── 6_multi_linear_unfreeze.py  # Multi-channel classifier with partial encoder unfreezing
+│   ├── 6_multi_linear_unfreeze.py  # Multi-channel classifier with encoder unfreezing
 │   ├── 7_multi_linear_5ch.py       # 5-channel linear classifier variant
-│   └── 8_mamba_whole_night.py      # Whole-night label smoothing using Mamba
+│   └── 8_mamba_whole_night.py      # Whole-night sequence refinement using Mamba
 │
 ├── MOMENT on PhysioNet.pptx        # Slides explaining the baseline & results
-├── README.md                       # Project description
-└── requirements.txt                # Python dependencies
+├── requirements.txt                # Python dependencies
+└── README.md                       # Project description
 
 ## 1. Overview
 
