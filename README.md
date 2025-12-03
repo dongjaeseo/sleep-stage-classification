@@ -2,6 +2,7 @@
 
 ---
 ## Folder Structure
+'''
 sleep-stage-classification/
 ├── preprocessing/
 │   └── 1_save_data.py              # Preprocess raw PSG and save epoch-level data
@@ -18,7 +19,7 @@ sleep-stage-classification/
 ├── MOMENT on PhysioNet.pptx        # Slides explaining the baseline & results
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project description
-
+'''
 ## 1. Overview
 
 **How well can a general-purpose time-series foundation model understand sleep?**  
