@@ -1,6 +1,23 @@
 # Sleep Stage Classification using MOMENT Foundation Model
 
 ---
+## Folder Structure
+sleep-stage-classification/
+├── preprocessing/
+│   └── 1_save_data.py              # Preprocess raw PSG and save epoch-level data
+│
+├── experiments/
+│   ├── 2_single_linear.py          # 1-channel → linear classifier baseline
+│   ├── 3_single_SVM.py             # 1-channel → SVM baseline
+│   ├── 4_multi_linear.py           # 3-channel → linear classifier
+│   ├── 5_multi_SVM.py              # 3-channel → SVM classifier
+│   ├── 6_multi_linear_unfreeze.py  # Multi-channel classifier with partial encoder unfreezing
+│   ├── 7_multi_linear_5ch.py       # 5-channel linear classifier variant
+│   └── 8_mamba_whole_night.py      # Whole-night label smoothing using Mamba
+│
+├── MOMENT on PhysioNet.pptx        # Slides explaining the baseline & results
+├── README.md                       # Project description
+└── requirements.txt                # Python dependencies
 
 ## 1. Overview
 
