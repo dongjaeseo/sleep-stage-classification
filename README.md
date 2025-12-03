@@ -36,7 +36,6 @@ This repository includes preprocessing, embedding extraction, sequence modeling,
 ---
 
 ## 2. MOMENT Model Summary
-<img width="1019" height="763" alt="image" src="https://github.com/user-attachments/assets/38fbd86b-03c2-4fbc-8107-fe07bad52327" />
 ### Pretraining Strategy
 - **Masking:** Random segments of the input sequence are masked  
 - **Patching:** Signals are split into fixed-length patches  
