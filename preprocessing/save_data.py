@@ -16,7 +16,7 @@ y_test (test#)
 where x contains physiological signals of sleep epochs of patients
 y contains label of specific sleep epoch
 
-Later files of this repository ASSUMES that you have 
+Experiment files of this repository ASSUMES that you have 
 train_x.npy / test_x.npy / train_y.npy / test_y.npy
 '''
 

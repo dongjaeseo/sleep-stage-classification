@@ -33,17 +33,24 @@ from sklearn.model_selection import train_test_split, ParameterGrid, cross_val_s
 # train_x.npy train_y.npy test_x.npy test_y.npy 
 # in the same directory as this file
 
-'''
-This codepage specifically tests performance improvement when mamba model is used to learn sequential pattern along sleep epochs.
-Directly comparing with the best performance from previous settings (Multi channel(3), Linear Classifier, Frozen encoder)
+"""
+This code tests whether a Mamba-based sequence model can improve sleep-stage
+classification by modeling temporal structure across sleep epochs.
 
-Here we extract embedding from each sleep epoch (mean is computed from 7 parts of embeddings to generate single embedding from epoch)
-And then we group patient-wise epochs, and pad according to the maximum number of epochs.
-Then computing Mamba state space model along forward and backward direction, modifies the embeddings of patient
-such that the embeddings are influenced by sequential epoch data.
+Baseline for comparison:
+    • Best previous setting: 3-channel input, linear classifier,
+      frozen encoder (no temporal modeling).
 
-Using linear classifier then achieved macro F1 score of 0.7566 which is a significant increase compared to 0.599 without Mamba
-'''
+Method:
+    • Extract embeddings for each epoch (mean of the 7 chunk embeddings).
+    • Group epochs by patient and pad sequences to the maximum length.
+    • Apply a Mamba state-space model bidirectionally across the epoch sequence.
+      This updates each epoch embedding using information from neighboring epochs.
+
+Result:
+    • Linear classifier on Mamba-refined embeddings achieved macro-F1 = 0.7566,
+      substantially higher than the baseline macro-F1 = 0.599 without Mamba.
+"""
 
 # ---------------- cfg ----------------
 DEFAULTS = dict(
