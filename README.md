@@ -11,7 +11,9 @@ sleep-stage-classification/
 ├── experiments/
 │   ├── run_experiment.py           # Unified experiment runner (Channel/Classifier/Freeze)
 │   ├── configs.py                  # Experiment configurations
-│   └── mamba_whole_night.py        # Whole-night sequence modeling with Mamba
+│   ├── mamba_data_utils.py         # Data loading, preprocessing, and night-level batching utilities
+│   ├── mamba_seq_models.py         # Mamba-based sequence encoder and classification head
+│   └── mamba_whole_night.py        # Main training script for whole-night sleep-stage modeling with Mamba
 │
 ├── MOMENT on PhysioNet.pptx        # Slides explaining process and results
 ├── requirements.txt                # Python dependencies
