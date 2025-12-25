@@ -1,4 +1,4 @@
-# Sleep Stage Classification using MOMENT Foundation Model
+# Sleep Stage Classification
 
 ---
 ## Folder Structure
