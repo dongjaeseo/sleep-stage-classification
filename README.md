@@ -15,14 +15,16 @@ sleep-stage-classification/
 │   ├── mamba_seq_models.py         # Mamba-based sequence encoder and classification head
 │   └── mamba_whole_night.py        # Main training script for whole-night sleep-stage modeling with Mamba
 │
-├── MOMENT on PhysioNet.pptx        # Slides explaining process and results
+├── pretrained_embedding_on_PhysioNet.pptx        # Slides explaining process and results
+├── sleep-demographic analysis.pptx               # Slides explaining macrostructure of sleep
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project description
 ```
 
 ## 1. Overview
 
-**How well can a general-purpose time-series foundation model understand sleep?**  
+**How do pretrained time-series representations perform on sleep-stage classification?**  
+Sleep-stage classification is a temporally structured clinical task where predictions depend on signal quality, channel selection, and continuity across the night. This project uses sleep data as a controlled but realistic setting to study how a general-purpose time-series foundation model behaves under these conditions.
 This project evaluates **MOMENT** [(Goswami et al., 2024)](https://arxiv.org/abs/2402.03885), a large-scale pretrained foundation model for physiological time-series data, on the classical sleep-stage classification task and compares its performance with **SleepFM** [(Thapa et al., 2024)](https://arxiv.org/abs/2405.17766), a sleep-specialized foundation model. The goal is to understand what factors most influence downstream performance.
 
 This study examines:
