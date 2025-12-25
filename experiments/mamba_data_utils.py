@@ -178,6 +178,7 @@ def build_memmap_dataloaders(
     return train_loader, test_loader
 
 
+# Figures out no. epochs for each patient
 def compute_lengths_per_patient(
     x_root: str,
     split_pickle_path: str,
@@ -217,6 +218,15 @@ def compute_lengths_per_patient(
     return train_lengths, test_lengths
 
 
+"""
+Collapse sub-epoch embeddings into full-epoch embeddings and regroup them by night.
+
+For each night:
+- Takes k sub-epoch embeddings per epoch (shape [c*k, D])
+- Reshapes into [c, k, D] and reduces (mean/median) → [c, D]
+- Computes one label per epoch (mode/first)
+- Returns a list of night-level sequences: Xn[i] shape [T_i, D], yn[i] shape [T_i]
+"""
 def fold_k_by_counts(
     emb: np.ndarray,
     labels: np.ndarray,
@@ -227,18 +237,7 @@ def fold_k_by_counts(
     label_mode: str = "mode",
     strict: bool = True,
 ) -> Tuple[list[np.ndarray], list[np.ndarray], list[int]]:
-    """
-    emb:    [N*k, D] flattened sub-epoch embeddings
-    labels: [N] if labels_are_per_epoch else [N*k]
-    counts: per-night epoch counts (sum == N)
-    k:      sub-epochs per epoch (7)
-    reduce: 'mean' or 'median' to collapse 7→1
-    label_mode: 'first' or 'mode' if labels are per sub-epoch
-    strict: if True, error if a night isn't exactly c*k long; else truncate to multiples of k
-
-    Returns:
-        Xn(list of [T_i,D]), yn(list of [T_i]), new_counts(list[int])
-    """
+    
     emb = np.asarray(emb)
     D = emb.shape[1]
     labels = np.asarray(labels)
@@ -297,6 +296,12 @@ def fold_k_by_counts(
     return Xn, yn, new_counts
 
 
+"""
+Dataset where each item is one full-night sequence for one patient.
+X_list[i] = epoch embeddings of shape [T_i, D]
+y_list[i] = labels of shape [T_i]
+Used to feed night-level sequences into the Mamba model.
+"""
 class Nights(Dataset):
     """
     Night-level dataset: Whole night epochs of 1 patient
@@ -317,6 +322,13 @@ class Nights(Dataset):
         )
 
 
+"""
+Pad a batch of variable-length nights into fixed-size tensors.
+Returns:
+  Xp : (B, T_max, D)  padded embeddings
+  Yp : (B, T_max)     padded labels (unused positions = -100)
+  M  : (B, T_max)     mask indicating valid (non-padded) positions
+"""
 def collate_nights(batch):
     """
     Variable length nights → padded batch.
