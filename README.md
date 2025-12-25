@@ -16,7 +16,7 @@ sleep-stage-classification/
 │   └── mamba_whole_night.py        # Main training script for whole-night sleep-stage modeling with Mamba
 │
 ├── pretrained_embedding_on_PhysioNet.pptx        # Slides explaining process and results
-├── sleep-demographic analysis.pptx               # Slides explaining macrostructure of sleep
+├── sleep-demographic analysis.pptx               # Macrostructure of sleep based on demographic features
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project description
 ```
