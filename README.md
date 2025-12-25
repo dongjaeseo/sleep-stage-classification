@@ -17,6 +17,7 @@ sleep-stage-classification/
 │
 ├── pretrained_embedding_on_PhysioNet.pptx        # Slides explaining process and results
 ├── sleep-demographic analysis.pptx               # Macrostructure of sleep based on demographic features
+│
 ├── requirements.txt                # Python dependencies
 └── README.md                       # Project description
 ```
